@@ -372,9 +372,9 @@ bottom: -7px
   position:relative;
   z-index: 2;
 }
-.page-content .wrapper{
-  max-width: 940px;
-}
+// .page-content .wrapper{
+//   max-width: 940px;
+// }
 
 .inner-post{
   display: -webkit-flex;
@@ -409,6 +409,12 @@ bottom: -7px
       margin-left:auto;
       margin-right: auto;
       width: 300px;
+    }
+    .perfil-linkedin .LI-profile-badge{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 280px;
     }
   }
 }
