@@ -21,6 +21,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%); //ahun no usado
 
 // Width of the content area
+$content-block: 	 1100px;
 $content-width:    1000px;
 $on-laptop:        800px;
 $on-palm:          600px;
@@ -44,10 +45,8 @@ $github: #002F5E;
         @content;
     }
 }
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-  "base",
-  "layout",
-  "c",
-  "syntax-highlighting"
-;
+// Import partials sass
+@import "base";
+@import "layout";
+@import "c";
+@import "syntax-highlighting";
