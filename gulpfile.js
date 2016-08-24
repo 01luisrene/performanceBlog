@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
+var gcmq = require('gulp-group-css-media-queries');
 
 
 var paths = {
@@ -33,10 +34,12 @@ gulp.task("sass", function(){
 	.pipe(sass().on('error', sass.logError))
 	.pipe(sourcemaps.init())
 	.pipe(postcss(processors))
+	.pipe(gcmq())
 	.pipe(cleanCSS())
-	.pipe(concat('cerounoluisrene.min.css'))
+	.pipe(concat('styles.css'))
 	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest(paths.sassdist));
+	.pipe(gulp.dest(paths.sassdist))
+	.pipe(notify("Ha finalizado la tarea de compresión  de archivos sass a css!"));
 });
 
 gulp.task("css", function(){
@@ -45,6 +48,22 @@ gulp.task("css", function(){
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest(paths.cssdist));
 });
+// crear style para mi web
+
+gulp.task("style", function(){
+	var processors = [
+	autoprefixer({browsers: ['last 2 versions'] })
+	];
+
+	return gulp.src('./style/estilo.scss')
+	.pipe(sass().on('error', sass.logError))
+	.pipe(postcss(processors))
+	.pipe(gcmq())
+	.pipe(cleanCSS())
+  .pipe(gulp.dest(paths.cssdist))
+	.pipe(notify("Ha finalizado la tarea style"));
+});
+
 //Comprimir imagenes
 gulp.task('images', function() {
   gulp.src('./images/**/*.{png,jpg,jpeg,gif,svg}')
@@ -63,7 +82,7 @@ gulp.task('compress', function () {
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.jsdist))
-    .pipe(notify("Ha finalizado la tarea compresión  de archivos js!"));
+    .pipe(notify("Ha finalizado la tarea de compresión  de archivos js!"));
 });
 //Vuelve a ejecutar la tarea cuando se modifique un archivo
 gulp.task('watch', function(){
@@ -71,6 +90,7 @@ gulp.task('watch', function(){
 	gulp.watch('./images/**/*', ['images']);
 	gulp.watch('./css/**/*', ['css']);
 	gulp.watch('./js/**/*', ['compress']);
+	gulp.watch('./style/estilo.scss', ['style']);
 });
 
-gulp.task('default',['watch', 'sass', 'images', 'css', 'compress']);
+gulp.task('default',['watch', 'sass', 'images', 'css', 'compress', 'style']);

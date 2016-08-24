@@ -195,8 +195,7 @@ var
         });
       }
     }
-  }
-  ,
+  },
  // 01luisrene javascripts initialization
   init = function () {
     headroom();
