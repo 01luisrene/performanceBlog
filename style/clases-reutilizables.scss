@@ -18,6 +18,7 @@
 }
 //estilos para el curpo del post y page
 .inner-post{
+  @extend %flexbox-space-between;
  width: 100%;
  .post{
   width: 68%;
@@ -28,26 +29,4 @@
  }
 }
 
-//Flexbox
-.loop__articles, .content__nav, .inner-post, .stack-lista{
- display: -webkit-flex;
- display: flex;
- -webkit-justify-content: space-between;
- justify-content: space-between;
- -webkit-flex-wrap: wrap;
- flex-wrap: wrap; 
-}
 
-.icons-box, .footer-col-wrapper {
- display: -webkit-flex;
- display: flex;
- -webkit-justify-content: flex-end;
- justify-content: flex-end;
-}
-
-.lista-redes{
- display: -webkit-flex;
- display: flex;
- -webkit-justify-content: center;
- justify-content: center;
-}

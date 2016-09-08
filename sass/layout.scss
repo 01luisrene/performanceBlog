@@ -271,68 +271,6 @@ p.text-foo{
     }
   }
 }
-//página archive
-.contenedor-archivos{
-  display: block;
-  min-height: 300px;
-  width: 100%;
-  .box-buscador{
-    position: relative;
-    font-size: 18px;
-    label {
-      position: absolute;
-      left: 13px;
-      top: 7px;
-    }
-    .campo-buscador{
-      font-size: 1.5em;
-      border: thin solid #004B97;
-      border-radius: 20px;
-      padding: 0 1.5em;
-      height: 40px;
-      width: 70%;
-      margin-bottom: 10px;
-      @include media-query($on-smartphone){
-        width: 100%;
-      }
-      &:focus{
-        outline: none;
-      }
-    }
-  }
-  .box-resultados{
-    margin-top: 1.5em;
-    .mensaje-resulados{
-      margin-bottom: 1.5em;
-      margin-top: -1.5em;
-      font-size: 12px;
-    }
-  }
-}
-.lista-articulos{
-  position: relative;
-  padding-left: 1.5em !important;
-}
-//Quitar list style 
-.no-list{
-  list-style-type: none !important;
-}
-.search-items{
-  a{
-    display: inline;
-  }
-  &::before{
-    position: absolute;
-    left: 0;
-    color: #00356A;
-    content: "\f10c";
-    font-family: "FontAwesome";
-    margin-right: .5em;
-  }
-}
-.mensaje-resulados{
-  margin-left: -1.5em;
-}
 //curriculum vitae
 .imprimir-curriculum{
   color: #008080;

@@ -40,25 +40,18 @@ $youtube: #cc181e;
 $google-plus: #db4437;
 $github: #002F5E;
 
-//Display bloque
-%display-block{
-  display: block;
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
 
 // Clearfix
-
 %clearfix {
 
     &:after {
         content: "";
         display: table;
         clear: both;
-    }
-}
-
-
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
     }
 }

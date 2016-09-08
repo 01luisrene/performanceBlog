@@ -30,7 +30,7 @@
     height: auto;  
   }
 }
-.name-author{
+.author-name{
   color: $color-name;
   text-align: center;
   font-size: 10vh;
@@ -48,7 +48,7 @@
     text-shadow: .1vw .5vw .1vw $bg-menu;
   }
 }
-.img-author{
+.author-img{
   @extend %display-block;
   border-radius: 50%;
   background-size: 100%;
@@ -73,7 +73,7 @@
  }
 }
 
-.description-author{
+.author-description{
   background-color: rgba(255,255,255, 1);
   border: thin solid rgba(0,0,0, 1);
   padding: 10px;
@@ -91,11 +91,12 @@
     max-width: 90vw;
   }
 }
-.lista-redes{
+.networking-list{
+  @extend %flexbox-center;
   text-align: center;
   margin: 0;
   padding: 4vh 1.5vh;
-  .item-redes-sociales{
+  .item{
     margin: 0 3vh;
     height: 8vh;
     width: 8vh;
@@ -107,7 +108,7 @@
       height: 7vw;
       width: 7vw;
     }
-    .link-redes-sociales{
+    .link{
       @extend %display-block;
       color: $color-name; /*#333333*/
       font-size: 8vh;
@@ -149,7 +150,7 @@
     }
   }
 }
-.code-languages{
+.languages-code{
   @extend %display-block;
   margin-left: auto;
   margin-right: auto;
@@ -163,6 +164,7 @@
 }
 
 .loop__articles {
+  @extend %flexbox-space-between;
   list-style: none;
   width: 100%;
   > .item-article {
@@ -222,8 +224,7 @@
   width: 100%;
 }
 //boton articulos
-.btn-links-articulos{
-  
+.btn-more-articles{
   border-radius: 10px;
   border: 2px solid #3D3939;
   color: #312F2F;
@@ -237,6 +238,7 @@
     border: 2px solid rgba(0,140,70, 1);
   }
   a{
+    @extend %display-block;
     color: inherit;
     padding: .5em 0;
     text-decoration: underline;

@@ -29,6 +29,10 @@
   transform: translateY(-100%);
 }
 
+.content__nav{
+ @extend %flexbox-space-between;
+}
+
 //icono logo
 .figure-logo{
   display: inline-block;
@@ -112,6 +116,7 @@
 }
 //estilos para el menú
 .icons-box{
+  @extend %flexbox-flex-end;
   background: transparent;
   margin-top: 5px;
   width: 15%;
@@ -230,13 +235,14 @@
     height: 80px;
   }
 }
-.lista-menu{
+//Menu mobile
+.menu-mobile-list{
 	 margin-top:10px;
-  .lista-item{
+  .item{
     display: inline-block;
     margin-bottom: 10px;
     width: 100%;
-    .link-menu{
+    .link{
       @extend %display-block;
       color: #fff;
       padding: 1em 1em;

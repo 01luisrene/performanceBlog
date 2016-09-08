@@ -18,6 +18,7 @@
     margin-left: 0;
 }
 .footer-col-wrapper {
+  @extend %flexbox-flex-end;
   font-size: 15px;
   color: $grey-color;
   width: 100%;

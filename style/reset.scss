@@ -3,6 +3,10 @@ body, h1, h2, h3, h4, h5, h6,p, blockquote, pre, hr,dl, dd, ol, ul, figure {marg
 p, div, header, main, article, section, aside, footer, figure, hgroup, nav{
   display:block;
 }
+//Display bloque
+%display-block{
+  display: block;
+}
 
 *, *::before, *::after{
   box-sizing: border-box;
@@ -134,4 +138,26 @@ pre {
         padding-right: 0;
         padding-left: 0;
     }
+}
+//flexbox
+%flexbox-center{
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: center;
+justify-content: center;
+}
+
+%flexbox-flex-end{
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: flex-end;
+justify-content: flex-end;
+}
+%flexbox-space-between{
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: space-between;
+justify-content: space-between;
+-webkit-flex-wrap: wrap;
+flex-wrap: wrap; 
 }
