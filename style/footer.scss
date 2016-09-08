@@ -1,0 +1,125 @@
+//Site footer
+.site-footer {
+  background-image: url('/assets/images/fondo_footer.png');
+  position:relative;
+  background-color: #383838;
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0 0 0;
+  z-index: 2;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+.footer-col-wrapper {
+  font-size: 15px;
+  color: $grey-color;
+  width: 100%;
+}
+
+.footer-col {
+ // padding-left: $spacing-unit / 2;
+  .title-footer{
+    @extend %display-block;
+    color: #fff;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: $spacing-unit / 2;
+    width: 100%;
+  }
+  a{
+    color: $brand-color;
+  }
+  a:visited{
+    text-decoration: underline;
+  }
+}
+
+.footer-col-1 {
+    width: 35%;
+}
+
+.footer-col-2 {
+    width: 20%;
+}
+
+.footer-col-3 {
+    width: 45%;
+    p{
+      margin-bottom: 0;
+    }
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1{
+      width: 50%;
+    }
+    .footer-col-2{
+      padding-left: 2%;
+      width: 48%;
+    }
+    .footer-col-3 {
+      border-top: thin dotted $color-name;
+      margin-top: 1em;
+      padding-top: 1em;
+      width:100%;
+    }
+}
+@include media-query($on-smartphone){
+  .footer-col-2{
+    border-top: thin dotted $color-name;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-left: 0;
+  }
+  .footer-col-1,.footer-col-2,.footer-col-3{
+    width:100%;
+  }
+}
+// name app
+.footer-name-app {
+  @extend %display-block;
+  color: $color-name-app;
+  font-family:$roboto-font-family;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: $spacing-unit / 2;
+  @include media-query($on-smartphone) {
+      font-size: 1.5em;
+  }
+}
+.name-app:before {
+  color: #fff;
+  content: '{ ';
+  font-family: $roboto-font-family;
+  text-shadow: none;
+}
+.name-app:after {
+  color: #fff;
+  content: ' }';
+  font-family: $roboto-font-family;
+  text-shadow: none;
+}
+
+//copy
+.copy{
+  .copy-parrafo{
+    @extend %display-block;
+    color: $text-white;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 1em 0;
+  }
+  a{
+      color: $text-white;
+  }
+   
+}

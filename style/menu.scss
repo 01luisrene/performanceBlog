@@ -1,0 +1,252 @@
+// Site header
+.site-header{
+  @extend %display-block;
+  background-color:$bg-menu;
+  box-shadow:  0px 3px 5px 0px rgba(226, 225, 217, 0.75);
+  z-index: 9999999999;
+  height: 47px;
+  width: 100%;
+  //ESTILOS PARA SMARTPHONE MENORES O IGUAL 480PX
+  @include media-query($on-smartphone){
+    height: auto;
+    max-height: 147px;
+  }
+}
+//clases headroom
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+//icono logo
+.figure-logo{
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  width: 7%;
+  @include media-query($content-width){
+     width: 50%;
+  }
+  //ESTILOS PARA SMARTPHONE MENORES O IGUAL 480PX
+  @include media-query($on-smartphone){
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    &::after{
+      color: $color-name;
+      content: "{01LuisRene}";
+      font-family: $roboto-font-family;
+      font-size: 1em;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      margin-left: -51px;
+      width: 102px;
+    }
+  }
+  a{
+    display: block;
+    height: 37px;
+    width: 55px;
+    //ESTILOS PARA SMARTPHONE MENORES O IGUAL 480PX
+    @include media-query($on-smartphone){
+      position: relative;
+      margin: 0 auto;
+      height: auto;
+      width: 100px;
+    }
+    img{
+      max-width: 55px;
+      @include media-query($on-smartphone){
+        max-width: 100%;
+      }
+    }
+  }
+}
+//estilos para el menú web desktop
+.nav{
+  background:$bg-menu;
+  display: block;
+  height: 47px;
+  width: 77%;
+  @include media-query($content-width){
+    display: none;
+  }
+}
+.nav-list{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+  .lista-item{
+    display: inline-block;
+    a{
+      color: #fff;
+      padding: .5em .5em;
+      font-size: 14px;
+      font-weight: normal;
+      &:hover{
+        background: #fff;
+        color: #2A2A2A;
+      }
+      small{
+        display: inline-block;
+        padding: .5em;
+      }
+    }
+  }
+}
+//estilos para el menú
+.icons-box{
+  background: transparent;
+  margin-top: 5px;
+  width: 15%;
+  @include media-query($content-width){
+    width: 50%;
+  }
+  //ESTILOS PARA SMARTPHONE MENORES O IGUAL 480PX
+  @include media-query($on-smartphone){
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .icon-buscador{
+    color: white;
+    font-size: 1.8em;
+    text-decoration: none;
+    margin-top: 3px;
+    
+    @include media-query($content-width){
+      margin-right: 15px;
+    }
+  }
+}
+//icono menú
+.icon-menu{
+  background: lighten($bg-menu, 10%);
+  border: 0;
+  border-radius: 3px;
+  display: none;
+  position: relative;
+  width: 42px;
+  height: 37px;
+  padding: 10px;
+  cursor: pointer;
+  @include media-query($content-width){
+    display: block;
+  }
+}
+.icon-menu .ico{
+  @extend %display-block;
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: rgba(0, 140, 70, 1);
+}
+.icon-menu .ico:before, .icon-menu .ico:after{
+  @extend %display-block;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 140, 70, 1);
+}
+.icon-menu .ico:before{
+  top: -7px;
+}
+.icon-menu .ico:after{
+  bottom: -7px
+}
+//fin icono menú
+//menú
+.active{
+  background: rgba(42,42,42, .2) !important;
+  border-radius: 3px;
+  box-shadow: -1px -1px 6px .5px rgba(255, 255, 255, 0.75);
+  border: thin solid #BFBFBF;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+}
+
+//============= estilos menú móvil
+.main-menu-mobile{
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999995;
+}
+.main-menu{
+  @extend %display-block;
+  background:$bg-menu;
+  padding: 15px;
+  position: fixed;
+  right: 0;
+  top:0;
+  height: 100%;
+  width: 350px;
+  @include media-query($on-palm){
+    background: rgba(35,34,45,.95);
+    width: 100%;
+  }
+  //ESTILOS PARA SMARTPHONE DE 320PX POR 240PX
+  @include media-query($on-smartphone){
+    overflow-x: scroll;
+  }
+
+  .icon-cerrar{
+    color: #fff;
+    position: absolute;
+    top:16px;
+    right: 24px;
+    text-decoration: none;
+    font-size: 2.5em;
+  }
+  .logo-menu-mobile{
+    @extend %display-block;
+  	margin: 0 auto;
+    height: 80px;
+  }
+}
+.lista-menu{
+	 margin-top:10px;
+  .lista-item{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+    .link-menu{
+      @extend %display-block;
+      color: #fff;
+      padding: 1em 1em;
+      text-transform: uppercase;
+      font-size: .9em;
+      font-weight: 700;
+      &:hover{
+        background: #fff;
+        color: #2A2A2A;
+      }
+    }
+  }
+}

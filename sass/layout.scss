@@ -1,4 +1,7 @@
-
+/*Estilo para los iconos*/
+.fa-folder-open{
+  color: #0D7ADF;
+}
 /*cookies*/
 .barra-aceptacion-cookie{
   background: rgba(42,42,42, .9);
@@ -308,7 +311,11 @@ p.text-foo{
 }
 .lista-articulos{
   position: relative;
-  padding-left: 1.5em;
+  padding-left: 1.5em !important;
+}
+//Quitar list style 
+.no-list{
+  list-style-type: none !important;
 }
 .search-items{
   a{
@@ -366,7 +373,8 @@ p.text-foo{
   margin-right: -12.5%;
 }
 .lista-curriculum{
-  list-style-type: none;
+  list-style-type: none !important;
+  padding-left: 0 !important;
   overflow-x: scroll;
   .lista-curriculum-item{
     font-size: 32px;

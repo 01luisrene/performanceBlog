@@ -2,7 +2,7 @@
   "name": "assets",
   "version": "1.0.0",
   "description": "Peformance para mi blog personal",
-  "main": "gulpfile.js",
+  "main": "gulpfile.js", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
